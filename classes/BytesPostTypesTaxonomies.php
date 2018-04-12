@@ -91,6 +91,33 @@ if( !class_exists( 'BytesPostsTaxonomies' ) ) {
 			}
 		}
 
+		public static function new_register_custom_post_types( $post_types ) {
+		    if( !is_array( $post_types ) ) {
+		        return;
+		    }
+		    foreach( $post_types as $post_key => $post_data ) {
+		        $args   = array();
+		        $labels = array();
+		        if( empty( $post_data['args'] ) || empty( $post_data[ 'labels' ] ) ) {
+		            continue;
+		        }
+		        $args   = $post_data['args'];
+		        $labels = $post_data['labels'];
+		        if( empty($labels['singular']) ) {
+		            continue;
+		        }
+		        $args['label'] = $labels['singular'];
+		        $labels = shortcode_atts( array(
+		            'singular'    => '',
+		            'plural'      => $labels['singular'] . 's',
+		            'overrides'   => array(),
+		            'text_domain' => ''
+		        ), $labels );
+		        $args['labels'] = call_user_func_array( array( 'MyClassName', 'populate_post_labels' ), array_values( $labels ) );
+		        register_post_type( $post_key, $args );
+		    }
+		}
+
 
 		
 
