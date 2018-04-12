@@ -18,22 +18,22 @@ if( !class_exists('EmptyPlugin') ) {
 
 		private $format_post_type = array(
 			'animal' => array(
-		        'labels' => array(
-		            'singular'    => 'Animal',
-		            'plural'      => 'Animals', // optional
-		            'overrides'   => array(),    // optional
-		            'text_domain' => ''          // optional
-		        ),
-		        'args' => array(
-		            'public'              => true,
-		            'has_archive'         => true,
-		            'menu_position'       => 21,
-		            'menu_icon'           => 'dashicons-portfolio',
-		            'supports'            => array('title', 'thumbnail'),
-		            'taxonomies'          => array('resource_type', 'resource_tag'),
-		            'exclude_from_search' => true
-		        ),
-		    ),
+				'labels' => array(
+					'singular'    => 'Animal',
+					'plural'      => 'Animals', // optional
+					'overrides'   => array(),    // optional
+					'text_domain' => ''          // optional
+				),
+				'args' => array(
+					'public'              => true,
+					'has_archive'         => true,
+					'menu_position'       => 21,
+					'menu_icon'           => 'dashicons-portfolio',
+					'supports'            => array('title', 'thumbnail'),
+					'taxonomies'          => array('resource_type', 'resource_tag'),
+					'exclude_from_search' => true
+				),
+			),
 		    'vegetable' => array(
 		        'labels' => array(
 		            'singular'    => 'Vegatable',
@@ -73,11 +73,11 @@ if( !class_exists('EmptyPlugin') ) {
 		private $test_taxonomies = array(
 				'color' => array(
 					'labels'    => array(
-			            'singular'    => 'Color',
-			             // optional
-			            'overrides'   => array(),    // optional
-			            'text_domain' => ''          // optional
-			        ),
+						'singular'    => 'Color',
+						// optional
+						'overrides'   => array(),    // optional
+						'text_domain' => ''          // optional
+					),
 					'args'      => array(
 						// 'labels'            => $this->populate_labels('Service', 'Services'),
 						'hierarchical'      => false,
@@ -93,11 +93,11 @@ if( !class_exists('EmptyPlugin') ) {
 				),
 				'number' => array(
 					'labels'    => array(
-			            'singular'    => 'Number',
-			            'plural'      => 'Numbers', // optional
-			            'overrides'   => array(),    // optional
-			            'text_domain' => ''          // optional
-			        ),
+						'singular'    => 'Number',
+						'plural'      => 'Numbers', // optional
+						'overrides'   => array(),    // optional
+						'text_domain' => ''          // optional
+					),
 					'args'      => array(
 						// 'labels'            => $this->populate_labels('Service', 'Services'),
 						'hierarchical'      => false,
