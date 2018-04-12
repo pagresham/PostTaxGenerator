@@ -128,7 +128,7 @@ if( !class_exists('EmptyPlugin') ) {
 		}
 
 		public function register_post_types() {
-			BytesPostsTaxonomies::new_register_custom_post_types( $this->test_post_types );
+			BytesPostsTaxonomies::new_register_custom_post_types( $this->new_format_post_type );
 		}
 		public function register_taxonomies() {
 			// BytesPostsTaxonomies::register_taxonomies( $this->test_taxonomies );

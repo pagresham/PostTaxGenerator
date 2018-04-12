@@ -19,7 +19,7 @@ if( !class_exists( 'BytesPostsTaxonomies' ) ) {
 							$singular_name  = $post_data[ 'singular' ];
 							$plural_name    = $post_data[ 'plural' ];	
 							$args['labels'] = self::populate_post_labels( $singular_name, $plural_name );
-
+							// var_dump($args['labels']);
 							register_post_type( $post_key, $args );
 						}	
 					}
@@ -59,7 +59,9 @@ if( !class_exists( 'BytesPostsTaxonomies' ) ) {
 			if( !is_array( $post_types ) ) {
 				return;
 			} 
+
 			foreach( $post_types as $post_key => $post_data ) {
+				// var_dump($post_data);
 				$args   = array();
 				$labels = array();
 				if( empty( $post_data['args'] ) || empty( $post_data['labels'] ) ) {
@@ -81,8 +83,9 @@ if( !class_exists( 'BytesPostsTaxonomies' ) ) {
 				), $labels );
 
 
-				$args['labels'] = self::populate_post_labels( $singular, $plural, $overrides, $textdomains );
-				// var_dump($labels);
+				$args['labels'] = self::populate_post_labels( $labels['singular'], $labels['plural'], $labels['overrides'], $labels['textdomain'] );
+
+				var_dump($args['labels']);
 				
 				register_post_type( $post_key, $args );		
 			}
